@@ -8,9 +8,15 @@ html {
 
 }
 
+img {
+    max-width: 100%;
+}
+
 :root {
     --bg-green: #009688;
     --bg-beige: #DCDBD1;
+    --icon-grey: #C5B7AC;
+    --bg-header-grey: #F9EFF0;
 }
 
 body{
@@ -51,13 +57,55 @@ body{
     flex-direction: column;
 }
 
-/* LEFT-BODY */
+/* IMAGES and RELATED TEXTS*/
+
+.sm-img {
+    height: 52px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.sm-username {
+    font-size: 0.75rem;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+/************ 
+LEFT-BODY 
+************ */
+
+/* LEFT BODY HEADER */
 
 .left-body-header {
     width: 100%;
     height: 70px;
-    background-color: blue;
+    background-color: var(--bg-header-grey);
+    display: flex;
+    justify-content: space-between;
 }
+
+.left-header-user {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.left-header-tools {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.icon-tools {
+    font-size: 1.5rem;
+    color: var(--icon-grey);
+    padding: 8px;
+}
+
+/* LEFT BODY NOTIFICATION */
 
 .left-body-notification {
     width: 100%;
@@ -65,11 +113,15 @@ body{
     background-color: rgb(0, 110, 255);
 }
 
+/* LEFT BODY SEARCH BAR */
+
 .left-body-search-bar {
     width: 100%;
     height: 55px;
     background-color: rgb(0, 174, 255);
 }
+
+/* LEFT BODY CONTACTS */
 
 .left-body-contacts {
     width: 100%;
@@ -77,7 +129,11 @@ body{
     background-color: rgb(0, 238, 255);
 }
 
-/* RIGHT-BODY */
+/************* 
+ RIGHT-BODY 
+ ************ */
+
+/* RIGHT BODY HEADER */
 
 .right-body-header {
     width: 100%;
@@ -85,11 +141,15 @@ body{
     background-color: red;
 }
 
+/* RIGHT BODY CONVERSATION */
+
 .right-body-conversation {
     width: 100%;
     flex-grow: 1;
     background-color: rgb(255, 145, 0);
 }
+
+/* RIGHT BODY MESSAGE BAR */
 
 .right-body-message-bar {
     width: 100%;
