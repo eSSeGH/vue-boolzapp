@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+
+}
+
+:root {
+    --bg-green: #009688;
+    --bg-beige: #DCDBD1;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(to top,
+      var(--bg-beige) 85%,
+      var(--bg-green) 85%,
+      var(--bg-green) 100%
+    );
+}
