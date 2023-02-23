@@ -156,7 +156,7 @@
                             </div>
 
                             <div class="input-group-message-bar d-flex-center">
-                                <input type="text" class="message-form" placeholder="Scrivi un messaggio" aria-label="message-form" aria-describedby="basic-addon1">
+                                <input v-model="newMessage" @keyup.enter="sendMessage(currentContact)" type="text" class="message-form" placeholder="Scrivi un messaggio" aria-label="message-form" aria-describedby="basic-addon1">
                             </div>
 
                             <div class="message-bar-audio-vocals d-flex-center">

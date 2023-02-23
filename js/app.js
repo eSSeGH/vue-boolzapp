@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             currentContact: 0,
+            newMessage: '',
             contacts: [{
                 name: 'BatMan',
                 avatar: './img/batman-user.png', 
@@ -134,6 +135,33 @@ createApp({
     methods: {
         getConversation(selectedContact) {
             this.currentContact = selectedContact
-        }
+        },
+        sendMessage(currentContact) {
+            let newMsg = {
+                date: new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}),
+                message: this.newMessage,
+                status: 'sent'
+            }
+
+            this.contacts[currentContact].messages.push(newMsg)
+
+            this.newMessage = ''
+
+            function receiveOkMessage(currentContact) {
+                let newReceivedMsg = {
+                    date: new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}),
+                    message: 'Ok',
+                    status: 'received'
+                }
+    
+                this.contacts[currentContact].messages.push(newReceivedMsg)
+            }
+
+            const answerInterval = setInterval(receiveOkMessage(currentContact), 1000) 
+        },
+
+    },
+    onUpdate() {
+        console.log(this.currentContact, receiveOkMessage, answerInterval)
     }
 }).mount('#app')
