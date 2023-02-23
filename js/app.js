@@ -143,21 +143,26 @@ createApp({
                 status: 'sent'
             }
 
-            this.contacts[currentContact].messages.push(newMsg)
+            let contacts = this.contacts
+            contacts[currentContact].messages.push(newMsg)
 
             this.newMessage = ''
 
-            function receiveOkMessage(currentContact) {
+            function receiveOkMessage(currentContact, contacts) {
+
+                console.log('receiveOkMessage function lauched')
                 let newReceivedMsg = {
                     date: new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}),
                     message: 'Ok',
                     status: 'received'
                 }
+
+                console.log(currentContact, contacts)
     
-                this.contacts[currentContact].messages.push(newReceivedMsg)
+                contacts[currentContact].messages.push(newReceivedMsg)
             }
 
-            const answerInterval = setInterval(receiveOkMessage(currentContact), 1000) 
+            setTimeout(receiveOkMessage(currentContact, contacts), 2000) 
         },
 
     },
