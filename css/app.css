@@ -12,6 +12,12 @@ img {
     max-width: 100%;
 }
 
+ul,
+ol,
+menu {
+    list-style-type: none;
+}
+
 :root {
     --bg-green: #009688;
     --bg-beige: #DCDBD1;
@@ -115,6 +121,10 @@ LEFT-BODY
     font-size: 1.5rem;
     color: var(--icon-grey);
     padding: 8px;
+}
+
+.icon-tools.fa-ellipsis-vertical {
+    padding: 8px 17px;
 }
 
 /* LEFT BODY NOTIFICATION */
@@ -221,5 +231,13 @@ LEFT-BODY
     width: 100%;
     height: 70px;
     background-color: yellow;
+}
+
+/***********
+HOVER
+***********/
+
+.icon-tools:hover {
+    color: white;
 }
 
