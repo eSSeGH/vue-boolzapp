@@ -83,12 +83,12 @@
                         <!-- CONTACTS LEFT BODY -->
                         <section class="left-body-contacts d-flex">
 
-                            <div class="left-contacts-user d-flex-center">
+                            <div v-for="(contact, index) in contacts" class="left-contacts-user d-flex-center">
 
-                                <img class="big-img" src="./img/batman-user.png" alt="batman logo">
+                                <img class="big-img" :src="contact.avatar" alt="">
 
                                 <div class="contacts-user-text">
-                                    <span class="big-text">Batman</span> <br>
+                                    <span class="big-text">{{contact.name}}</span> <br>
                                     <span class="last-message sm-text">Ultimo messaggio</span>
                                 </div>
 
