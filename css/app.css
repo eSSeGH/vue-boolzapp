@@ -218,13 +218,13 @@ LEFT-BODY
     flex-grow: 1;
     background-color: rgb(0, 238, 255);
     flex-direction: column;
-    position: relative;
     background-color: white;
     overflow-y: scroll;
 }
 
 .left-contacts-user {
     border-bottom: 1px solid var(--bg-header-grey);
+    position: relative;
 }
 
 .last-message {
@@ -269,7 +269,7 @@ LEFT-BODY
     position: relative;
 }
 
-.conversation-message.message-green {
+.conversation-message.message-sent {
     align-self: flex-end;
     background-color: var(--message-green);
 }
@@ -312,5 +312,9 @@ HOVER
 
 .icon-tools:hover {
     color: white;
+}
+
+.left-contacts-user:hover {
+    background-color: var(--bg-header-grey);
 }
 

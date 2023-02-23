@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            currentContact: 0,
             contacts: [{
                 name: 'BatMan',
                 avatar: './img/batman-user.png', 
@@ -128,6 +129,11 @@ createApp({
                     status: 'received'
                 } ], 
             }]
+        }
+    },
+    methods: {
+        getConversation(selectedContact) {
+            this.currentContact = selectedContact
         }
     }
 }).mount('#app')
