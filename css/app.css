@@ -24,6 +24,7 @@ menu {
     --icon-grey: #C5B7AC;
     --bg-header-grey: #F9EFF0;
     --notification-light-blue: #8EDAFC;
+    --message-green: #D5F9BA;
 }
 
 body{
@@ -66,6 +67,7 @@ UTILITY CLASSES
     height: 95vh;
     background-color: red;
     flex-direction: column;
+    border-right: 1px solid grey;
 }
 
 .col-right-body {
@@ -77,23 +79,32 @@ UTILITY CLASSES
 
 /* IMAGES and RELATED TEXTS*/
 
-.sm-img {
-    height: 52px;
+img[class$="img"] {
     aspect-ratio: 1/1;
     border-radius: 50%;
+}
+
+.sm-img {
+    height: 52px;
     margin: 10px;
+}
+
+.big-img {
+    height: 62px;
+    margin: 10px 15px;
+}
+
+span[class$="text"] {
+    font-family: sans-serif;
+    font-weight: bold;
 }
 
 .sm-text {
     font-size: 0.8rem;
-    font-family: sans-serif;
-    font-weight: bold;
 }
 
 .big-text {
     font-size: 1rem;
-    font-family: sans-serif;
-    font-weight: bold;
 }
 
 .underline-text {
@@ -162,7 +173,7 @@ LEFT-BODY
 .left-body-search-bar {
     width: 100%;
     height: 55px;
-    background-color: rgb(0, 174, 255);
+    background-color: var(--bg-header-grey);
     color: grey;
     padding: 6px;
 }
@@ -199,6 +210,24 @@ LEFT-BODY
     width: 100%;
     flex-grow: 1;
     background-color: rgb(0, 238, 255);
+    flex-direction: column;
+    position: relative;
+    background-color: white;
+}
+
+.left-contacts-user {
+    border-bottom: 1px solid var(--bg-header-grey);
+}
+
+.last-message {
+    color: #C5B7AC;
+}
+
+.date {
+    position: absolute; 
+    top: 5px;
+    right: 5px;
+    color: 
 }
 
 /************* 
