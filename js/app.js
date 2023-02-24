@@ -162,7 +162,7 @@ createApp({
                 contacts[currentContact].messages.push(newReceivedMsg)
             }
 
-            setTimeout(receiveOkMessage(currentContact, contacts), 2000) 
+            setTimeout(function () {receiveOkMessage(currentContact, contacts)}, 1000) 
         },
 
     },
