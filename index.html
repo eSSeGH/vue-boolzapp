@@ -13,170 +13,175 @@
 
     <div id="app">
         
-        <main>
+        <div class="body-app">
 
-            <div class="container1">
+            <main>
 
-                <div class="row">
-
-                    <!-- START LEFT BODY -->
-                    <div class="col-left-body d-flex">
-
-                        <!-- HEADER LEFT BODY -->
-                        <header class="left-body body-header d-flex">
-
-                            <div class="left-header header-user d-flex-center">
-
-                                <img class="sm-img" src="./img/ironman-user.png" alt="ironman logo">
-                                <span class="sm-text">Iron Man</span>
-
-                            </div>
-
-                            <div class="left-header header-tools d-flex-center">
-
-                                <ul style="display: contents">
-                                    <li>
-                                        <i class="fa-solid fa-circle-notch icon-tools"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fa-solid fa-message icon-tools"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fa-solid fa-ellipsis-vertical icon-tools"></i>
-                                    </li>
-                                </ul>                               
-                                
-                            </div>
-
-                        </header>
-
-                        <!-- NOTIFICATION LEFT BODY -->
-                        <section class="left-body-notification d-flex-center">
-
-                            <div class="notification-icon-box d-flex-center">
-                                <i class="notification-icon fa-solid fa-bell-slash"></i>
-                            </div>
-
-                            <div class="notification-text">
-
-                                <span class="big-text" style="display: block;">Ricevi notifiche di nuovi messaggi</span>
-                                <span class="underline-text" >Attiva notifiche desktop</span>
-                                
-                            </div>  
-
-                        </section>
-
-                        <!-- SEARCHBAR LEFT BODY -->
-                        <section class="left-body-search-bar d-flex-center">
-
-                            <div class="input-group-search-bar d-flex-center">
-
-                                <button id="search-value" class="d-flex-center">
-                                    <i class="fa-solid fa-magnifying-glass" style="pointer-events: none;"></i>
-                                </button>
-                                <input type="text" class="search-form" placeholder="Cerca o inizia una nuova chat" aria-label="search-form" aria-describedby="basic-addon1">
-
-                            </div>
-
-                        </section>
-
-                        <!-- CONTACTS LEFT BODY -->
-                        <section class="left-body-contacts d-flex">
-
-                            <div v-for="(contact, index) in contacts" @click="getConversation(index)" class="left-contacts-user d-flex-center">
-
-                                <img class="big-img" :src="contact.avatar" alt="">
-
-                                <div class="contacts-user-text">
-                                    <span class="big-text">{{contact.name}}</span> <br>
-                                    <span class="last-message sm-text">Ultimo messaggio</span>
+                <div class="container1">
+    
+                    <div class="row">
+    
+                        <!-- START LEFT BODY -->
+                        <div class="col-left-body d-flex">
+    
+                            <!-- HEADER LEFT BODY -->
+                            <header class="left-body body-header d-flex">
+    
+                                <div class="left-header header-user d-flex-center">
+    
+                                    <img class="sm-img" src="./img/ironman-user.png" alt="ironman logo">
+                                    <span class="sm-text">Iron Man</span>
+    
                                 </div>
-
-                                <div class="contacts-date date-text">
-                                    12:00
+    
+                                <div class="left-header header-tools d-flex-center">
+    
+                                    <ul style="display: contents">
+                                        <li>
+                                            <i class="fa-solid fa-circle-notch icon-tools"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-message icon-tools"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-ellipsis-vertical icon-tools"></i>
+                                        </li>
+                                    </ul>                               
+                                    
                                 </div>
-                                
-                            </div>
-
-                        </section>
-
+    
+                            </header>
+    
+                            <!-- NOTIFICATION LEFT BODY -->
+                            <section class="left-body-notification d-flex-center">
+    
+                                <div class="notification-icon-box d-flex-center">
+                                    <i class="notification-icon fa-solid fa-bell-slash"></i>
+                                </div>
+    
+                                <div class="notification-text">
+    
+                                    <span class="big-text" style="display: block;">Ricevi notifiche di nuovi messaggi</span>
+                                    <span class="underline-text" >Attiva notifiche desktop</span>
+                                    
+                                </div>  
+    
+                            </section>
+    
+                            <!-- SEARCHBAR LEFT BODY -->
+                            <section class="left-body-search-bar d-flex-center">
+    
+                                <div class="input-group-search-bar d-flex-center">
+    
+                                    <button id="search-value" class="d-flex-center">
+                                        <i class="fa-solid fa-magnifying-glass" style="pointer-events: none;"></i>
+                                    </button>
+                                    <input type="text" class="search-form" placeholder="Cerca o inizia una nuova chat" aria-label="search-form" aria-describedby="basic-addon1">
+    
+                                </div>
+    
+                            </section>
+    
+                            <!-- CONTACTS LEFT BODY -->
+                            <section class="left-body-contacts d-flex">
+    
+                                <div v-for="(contact, index) in contacts" @click="getConversation(index)" class="left-contacts-user d-flex-center">
+    
+                                    <img class="big-img" :src="contact.avatar" alt="">
+    
+                                    <div class="contacts-user-text">
+                                        <span class="big-text">{{contact.name}}</span> <br>
+                                        <span class="last-message sm-text">Ultimo messaggio</span>
+                                    </div>
+    
+                                    <div class="contacts-date date-text">
+                                        12:00
+                                    </div>
+                                    
+                                </div>
+    
+                            </section>
+    
+                        </div>
+                        <!-- END LEFT BODY -->
+    
+                        <!-- START RIGHT BODY -->
+                        <div class="col-right-body d-flex">
+    
+                            <!-- RIGHT BODY HEADER -->
+                            <header class="right-body body-header d-flex">
+    
+                                <div class="right-header header-user d-flex-center">
+    
+                                    <img class="sm-img" :src="activeContact.avatar" alt="batman logo">
+                                    <span class="sm-text">{{activeContact.name}}</span>
+    
+                                </div>
+    
+                                <div class="right-header header-tools d-flex-center">
+    
+                                    <ul style="display: contents">
+                                        <li>
+                                            <i class="fa-solid fa-circle-notch icon-tools"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-message icon-tools"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-ellipsis-vertical icon-tools"></i>
+                                        </li>
+                                    </ul>                               
+                                    
+                                </div>
+    
+                            </header>
+    
+                            <!-- RIGHT BODY CONVERSATION -->
+                            <section class="right-body-conversation d-flex">
+    
+                                <div v-for="(msg, index) in activeContact.messages" class="conversation-message" :class="msg.status === 'sent' ? 'message-sent' : '' ">
+    
+                                    <div class="sm-text" style="font-weight: normal;">{{msg.message}}</div>
+                                    <div class="conversation-date date-text">
+                                        {{ new Date(msg.date).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}) }}
+                                    </div>
+    
+                                </div>
+    
+                            </section>
+    
+                            <!-- RIGHT BODY MESSAGE BAR -->
+                            <section class="right-body-message-bar d-flex">
+    
+                                <div class="message-bar-emoticons d-flex-center">
+                                    <i class="fa-regular fa-face-smile icon-tools"></i>
+                                </div>
+    
+                                <div class="input-group-message-bar d-flex-center">
+                                    <input v-model="newMessage" @keyup.enter="sendMessage(currentContact)" type="text" class="message-form" placeholder="Scrivi un messaggio" aria-label="message-form" aria-describedby="basic-addon1">
+                                </div>
+    
+                                <div class="message-bar-audio-vocals d-flex-center">
+                                    <i class="fa-solid fa-microphone icon-tools"></i>
+                                </div>
+    
+                            </section>
+    
+                        </div>
+                        <!-- END RIGHT BODY -->
+    
                     </div>
-                    <!-- END LEFT BODY -->
-
-                    <!-- START RIGHT BODY -->
-                    <div class="col-right-body d-flex">
-
-                        <!-- RIGHT BODY HEADER -->
-                        <header class="right-body body-header d-flex">
-
-                            <div class="right-header header-user d-flex-center">
-
-                                <img class="sm-img" src="./img/batman-user.png" alt="batman logo">
-                                <span class="sm-text">Batman</span>
-
-                            </div>
-
-                            <div class="right-header header-tools d-flex-center">
-
-                                <ul style="display: contents">
-                                    <li>
-                                        <i class="fa-solid fa-circle-notch icon-tools"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fa-solid fa-message icon-tools"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fa-solid fa-ellipsis-vertical icon-tools"></i>
-                                    </li>
-                                </ul>                               
-                                
-                            </div>
-
-                        </header>
-
-                        <!-- RIGHT BODY CONVERSATION -->
-                        <section class="right-body-conversation d-flex">
-
-                            <div v-for="(msg, index) in contacts[currentContact].messages" class="conversation-message" :class="msg.status === 'sent' ? 'message-sent' : '' ">
-
-                                <div class="sm-text" style="font-weight: normal;">{{msg.message}}</div>
-                                <div class="conversation-date date-text">
-                                    {{ new Date(msg.date).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}) }}
-                                </div>
-
-                            </div>
-
-                        </section>
-
-                        <!-- RIGHT BODY MESSAGE BAR -->
-                        <section class="right-body-message-bar d-flex">
-
-                            <div class="message-bar-emoticons d-flex-center">
-                                <i class="fa-regular fa-face-smile icon-tools"></i>
-                            </div>
-
-                            <div class="input-group-message-bar d-flex-center">
-                                <input v-model="newMessage" @keyup.enter="sendMessage(currentContact)" type="text" class="message-form" placeholder="Scrivi un messaggio" aria-label="message-form" aria-describedby="basic-addon1">
-                            </div>
-
-                            <div class="message-bar-audio-vocals d-flex-center">
-                                <i class="fa-solid fa-microphone icon-tools"></i>
-                            </div>
-
-                        </section>
-
-                    </div>
-                    <!-- END RIGHT BODY -->
-
+    
                 </div>
-
+    
             </div>
-
-        </div>
-
-    </main>
+    
+        </main>
+    
+    </div>
 
     <script src="https://kit.fontawesome.com/f845cc90f8.js" crossorigin="anonymous"></script>
     <script src="./js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
 </body>
 </html>

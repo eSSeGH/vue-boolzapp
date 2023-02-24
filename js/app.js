@@ -166,7 +166,10 @@ createApp({
         },
 
     },
-    onUpdate() {
-        console.log(this.currentContact, receiveOkMessage, answerInterval)
-    }
+    computed: {
+        activeContact() {
+            return this.contacts[this.currentContact]
+        },
+    },
+
 }).mount('#app')

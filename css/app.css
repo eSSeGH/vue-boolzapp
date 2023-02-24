@@ -27,7 +27,7 @@ menu {
     --message-green: #D5F9BA;
 }
 
-body{
+.body-app{
     height: 100vh;
     background: linear-gradient(to top,
       var(--bg-beige) 85%,
