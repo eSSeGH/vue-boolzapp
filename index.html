@@ -76,7 +76,7 @@
                                     <button id="search-value" class="d-flex-center">
                                         <i class="fa-solid fa-magnifying-glass" style="pointer-events: none;"></i>
                                     </button>
-                                    <input type="text" class="search-form" placeholder="Cerca o inizia una nuova chat" aria-label="search-form" aria-describedby="basic-addon1">
+                                    <input v-model="searchString" type="text" class="search-form" placeholder="Cerca o inizia una nuova chat" aria-label="search-form" aria-describedby="basic-addon1">
     
                                 </div>
     
@@ -85,17 +85,21 @@
                             <!-- CONTACTS LEFT BODY -->
                             <section class="left-body-contacts d-flex">
     
-                                <div v-for="(contact, index) in contacts" @click="getConversation(index)" class="left-contacts-user d-flex-center">
+                                <div v-for="(contact, index) in contacts" @click="getConversation(index)">
     
-                                    <img class="big-img" :src="contact.avatar" alt="">
-    
-                                    <div class="contacts-user-text">
-                                        <span class="big-text">{{contact.name}}</span> <br>
-                                        <span class="last-message sm-text">Ultimo messaggio</span>
-                                    </div>
-    
-                                    <div class="contacts-date date-text">
-                                        12:00
+                                    <div v-if="searchInContacts(contact.name) === true" class="left-contacts-user d-flex-center">
+
+                                        <img class="big-img" :src="contact.avatar" alt="">
+        
+                                        <div class="contacts-user-text">
+                                            <span class="big-text">{{contact.name}}</span> <br>
+                                            <span class="last-message sm-text">Ultimo messaggio</span>
+                                        </div>
+        
+                                        <div class="contacts-date date-text">
+                                            12:00
+                                        </div>
+
                                     </div>
                                     
                                 </div>

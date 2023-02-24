@@ -1,6 +1,6 @@
 const DateTime = luxon.DateTime
-const nowTime = DateTime.now()
-console.log(DateTime.now())
+// const nowTime = DateTime.now()
+// console.log(DateTime.now())
 const { createApp } = Vue
 
 createApp({
@@ -8,6 +8,7 @@ createApp({
         return {
             currentContact: 0,
             newMessage: '',
+            searchString: '',
             contacts: [{
                 name: 'BatMan',
                 avatar: './img/batman-user.png', 
@@ -141,7 +142,7 @@ createApp({
         },
         sendMessage(currentContact) {
             let newMsg = {
-                date: nowTime,
+                date: '',
                 message: this.newMessage,
                 status: 'sent'
             }
@@ -155,7 +156,7 @@ createApp({
 
                 console.log('receiveOkMessage function lauched')
                 let newReceivedMsg = {
-                    date: nowTime,
+                    date: '',
                     message: 'Ok',
                     status: 'received'
                 }
@@ -172,8 +173,19 @@ createApp({
             const timeFormat = DateTime.fromFormat(activeContact.messages[msgIndex].date, 'dd/LL/yyyy HH:mm:ss')
 
             return time = timeFormat.toFormat('HH:mm')
-        }
+        },
+        searchInContacts(name) {
 
+            nameUpperCase = name.toUpperCase()
+
+            searchStringUpperCase = this.searchString.toUpperCase()
+
+            if (nameUpperCase.search(searchStringUpperCase) >= 0) {
+                return true
+            } else {
+                return false
+            }
+        },
     },
     computed: {
         activeContact() {
@@ -182,4 +194,3 @@ createApp({
     },
 
 }).mount('#app')
-
