@@ -1,3 +1,9 @@
+
+const DateTime = luxon.DateTime
+
+console.log(DateTime)
+
+
 const { createApp } = Vue
 
 createApp({
@@ -20,7 +26,7 @@ createApp({
                     },{ 
                     date: '10/01/2020 16:15:22',
                     message: 'Tutto fatto!',
-                    status: 'received'
+                    status: 'received',
                     } ],
                 }, {
                 name: 'Capitan America',
@@ -164,6 +170,12 @@ createApp({
 
             setTimeout(function () {receiveOkMessage(currentContact, contacts)}, 1000) 
         },
+        getTimeFromFormat(activeContact, msg) {
+
+            const timeFormat = DateTime.fromFormat(this.activeContact.messages[msg].date, 'dd/LL/yyyy HH:mm:ss')
+
+            return time = timeFormat.toFormat('HH:mm')
+        }
 
     },
     computed: {
@@ -173,3 +185,4 @@ createApp({
     },
 
 }).mount('#app')
+
