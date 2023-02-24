@@ -1,6 +1,6 @@
 const DateTime = luxon.DateTime
-// const nowTime = DateTime.now()
-// console.log(DateTime.now())
+const nowTime = DateTime.now()
+
 const { createApp } = Vue
 
 createApp({
@@ -142,7 +142,7 @@ createApp({
         },
         sendMessage(currentContact) {
             let newMsg = {
-                date: '',
+                date: nowTime.toFormat('dd/LL/yyyy HH:mm:ss'),
                 message: this.newMessage,
                 status: 'sent'
             }
@@ -156,7 +156,7 @@ createApp({
 
                 console.log('receiveOkMessage function lauched')
                 let newReceivedMsg = {
-                    date: '',
+                    date: nowTime.toFormat('dd/LL/yyyy HH:mm:ss'),
                     message: 'Ok',
                     status: 'received'
                 }
