@@ -85,9 +85,9 @@
                             <!-- CONTACTS LEFT BODY -->
                             <section class="left-body-contacts d-flex">
     
-                                <template v-for="(contact, index) in contacts" @click="getConversation(index)">
+                                <template v-for="(contact, index) in contacts">
     
-                                    <div v-if="searchInContacts(contact.name) === true" class="left-contacts-user d-flex-center">
+                                    <div v-if="searchInContacts(contact.name) === true" class="left-contacts-user d-flex-center"  @click="getConversation(index)">
 
                                         <img class="big-img" :src="contact.avatar" alt="">
         
