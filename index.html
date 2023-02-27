@@ -85,7 +85,7 @@
                             <!-- CONTACTS LEFT BODY -->
                             <section class="left-body-contacts d-flex">
     
-                                <div v-for="(contact, index) in contacts" @click="getConversation(index)">
+                                <template v-for="(contact, index) in contacts" @click="getConversation(index)">
     
                                     <div v-if="searchInContacts(contact.name) === true" class="left-contacts-user d-flex-center">
 
@@ -102,7 +102,7 @@
 
                                     </div>
                                     
-                                </div>
+                                </template>
     
                             </section>
     
