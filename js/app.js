@@ -154,14 +154,11 @@ createApp({
 
             function receiveOkMessage(currentContact, contacts) {
 
-                console.log('receiveOkMessage function lauched')
                 let newReceivedMsg = {
                     date: nowTime.toFormat('dd/LL/yyyy HH:mm:ss'),
                     message: 'Ok',
                     status: 'received'
                 }
-
-                console.log(currentContact, contacts)
     
                 contacts[currentContact].messages.push(newReceivedMsg)
             }
