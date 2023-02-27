@@ -136,6 +136,11 @@ createApp({
             }]
         }
     },
+    watch: {
+        activeContact(oldActiveContact, newActiveContact) {
+            this.newMessage = ''
+        }
+    },
     methods: {
         getConversation(selectedContact) {
             this.currentContact = selectedContact
